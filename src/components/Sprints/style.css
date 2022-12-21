@@ -10,25 +10,13 @@
     color: rgba(0, 0, 0, 0.4);
 }
 
-.submit {
-    background-color: rgb(0 119 204);
-    border-color: rgb(0 119 204);
-    color: white;
-    /*font-family: 'Inter';*/
-}
-
-.sprints__select,
-.btn {
+/* .sprints__select {
     margin: 12px;
     padding: 24px 32px;
-    border-radius: 15px;
+    border-radius: 16px;
     font-style: normal;
     font-size: 18px;
     line-height: 16px;
     text-align: center;
     letter-spacing: 0.8px;
-}
-
-.btn {
-    font-weight: 700;
-}
+} */
