@@ -14,6 +14,20 @@ const Sprints = ({ sprintsList }) => {
         //window.print();
     };
 
+    /* const options = {
+        method: 'GET',
+        headers: {
+          cookie: 'atlassian.xsrf.token=BN8V-28CD-O255-NJ3H_39190a654ef9eef5395391e5a85c1dcb452949d0_lin',
+          Authorization: 'Basic c2Fyc29uakBnbWFpbC5jb206eEhVMG5ublRZbk5VZVVsaUMyejcyMUYz'
+        }
+      };
+      
+    fetch('https://tappytaps2.atlassian.net/rest/agile/1.0/board/1/sprint/?state=active%2Cfuture', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err)); */
+
+
     useEffect(() => {
         console.log(sprintSelect);
     }, [sprintSelect]);
