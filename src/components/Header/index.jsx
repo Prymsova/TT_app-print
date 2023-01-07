@@ -1,16 +1,15 @@
 import { useEffect, useState } from 'react';
 import './style.css';
 import Sprints from '../Sprints';
-import response from './sprintsList';
 
-const Header = () => {
+const Header = ({response}) => {
 
     const [ sprintsList, setSprintsList] = useState([]);
 
     useEffect(() => {
         //console.log("já jsem useEffect při mountu Headeru a budu fetchovat api se sprintama")
         setSprintsList(response.values)
-    }, [sprintsList]);
+    }, [response]);
  
     return (
         <header className="header">

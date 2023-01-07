@@ -18,18 +18,18 @@ const Sprints = ({ sprintsList }) => {
         method: 'GET',
         headers: {
           cookie: 'atlassian.xsrf.token=BN8V-28CD-O255-NJ3H_39190a654ef9eef5395391e5a85c1dcb452949d0_lin',
-          Authorization: 'Basic c2Fyc29uakBnbWFpbC5jb206eEhVMG5ublRZbk5VZVVsaUMyejcyMUYz'
+          Authorization: 'Basic c2Fyc29uakBnbWFpbC5jb206YnhzNGxFbkJaUU1tTUd0RW05YnE1NUND'
         }
       };
       
-    fetch('https://tappytaps2.atlassian.net/rest/agile/1.0/board/1/sprint/?state=active%2Cfuture', options)
+      fetch('https://tappytaps2.atlassian.net/rest/agile/1.0/board/1/sprint/?state=active%2Cfuture', options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err)); */
 
 
     useEffect(() => {
-        console.log(sprintSelect);
+        console.log("já jsem console.log z useEffectu v komponentě Sprints po změně stavu sprintSelect, vybraný sprint: " + sprintSelect);
     }, [sprintSelect]);
 
     return (
