@@ -1,41 +1,46 @@
+@import '../../base.css';
+
 .btn {
-    font-weight: 700;
-    margin: 12px;
-    padding: 24px 32px;
-    border: 2px solid transparent;
-    border-radius: 16px;
-    font-style: normal;
-    font-size: 18px;
-    line-height: 16px;
-    text-align: center;
-    letter-spacing: 0.8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 16px;
+  height: 64px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.8px;
+  /*border: 2px solid transparent;*/
+  border-radius: 16px;
+  border: none;
 }
 
 .btn--primary {
-    background-color: #0077CC;
-    border-color: #0077cc;
-    color: white;
-    /*font-family: 'Inter';*/
+  margin: 12px;
+  padding: 24px 32px;
+  color: #ffffff;
+  background-color: var(--primaryBase);
+  /*border-color: var(--primaryBase)*/
 }
 
 .btn--primary:hover {
-    background-color: #0086E5;
+  background-color: var(--primaryLighter);
 }
 
 .btn--primary:active {
-    background-color: #0068B2;
+  background-color: var(--primaryDarker);
 }
 
 .btn--outlined {
-    background-color: #ffffff;
-    border-color: #0077cc;
-    color: #0077cc;
+  margin: 12px;
+  padding: 20px 24px 20px 16px;
+  color: var(--primaryBase);
+  border: 2px solid var(--primaryBase);
+  /*background-color: none;*/
 }
 
 .btn--outlined:hover {
-    background-color: #0077cc1F;
+  background-color: var(--primaryLight1);
 }
 
 .btn--outlined:active {
-    background-color: #0077cc3D;
+  background-color: var(--primaryLight2);
 }

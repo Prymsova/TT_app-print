@@ -1,15 +1,7 @@
-import { useEffect, useState } from 'react';
 import './style.css';
 import Sprints from '../Sprints';
 
-const Header = ({response}) => {
-
-    const [ sprintsList, setSprintsList] = useState([]);
-
-    useEffect(() => {
-        //console.log("já jsem useEffect při mountu Headeru a budu fetchovat api se sprintama")
-        setSprintsList(response.values)
-    }, [response]);
+const Header = ({ sprintsList, onSubmitSprints }) => {
  
     return (
         <header className="header">
@@ -27,7 +19,7 @@ const Header = ({response}) => {
                 </svg>
             </div>
 
-            <Sprints sprintsList={ sprintsList }/>
+            <Sprints sprintsList={ sprintsList } onSubmitSprints={ onSubmitSprints }/>
         </header>
     );
 };

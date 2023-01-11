@@ -1,0 +1,50 @@
+@import '../../base.css';
+
+.sprint {
+  padding: 32px 48px;
+  border: 1px solid #999999;
+}
+
+.sprint__name {
+  font-size: 60px;
+  font-weight: 600;
+  color: var(--mediumEmphasis);
+}
+
+.sprint__goal {
+  font-size: 80px;
+  font-weight: 700;
+  color: var(--highEmphasis);
+}
+
+.sprint__dates {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 54px;
+  margin-top: 24px;
+}
+
+.sprint__date {
+  border-radius: 25.69px;
+  padding: 12px 24px;
+}
+
+.sprint__date--start {
+  color: rgba(19, 135, 0, 1);
+  background-color: rgba(85, 217, 64, 0.12);
+  margin-right: 40px;
+}
+
+.sprint__date--start::before {
+  content: url('../../icons/flag.svg');
+  margin-right: 10px;
+}
+
+.sprint__date--end::before {
+  content: url('../../icons/sports_score.svg');
+  margin-right: 10px; 
+}
+
+.sprint__date--end {
+  color: var(--warningBase);
+  background-color: var(--warningLight1);
+}

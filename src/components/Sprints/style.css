@@ -1,22 +1,30 @@
+@import '../../base.css';
+
 .sprints {
-    text-align: center;
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  text-align: center;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .note {
-    color: rgba(0, 0, 0, 0.4);
+  color: var(--mediumEmphasis);
+  font-weight: 300;
+  font-size: 24px;
 }
 
-/* .sprints__select {
-    margin: 12px;
-    padding: 24px 32px;
-    border-radius: 16px;
-    font-style: normal;
-    font-size: 18px;
-    line-height: 16px;
-    text-align: center;
-    letter-spacing: 0.8px;
-} */
+.sprints__form {
+    margin-top: 32px;
+}
+
+.sprints__select {
+  margin: 12px;
+  padding: 18px 24px;
+  border: 2px solid var(--lowEmphasis);
+  border-radius: 16px;
+  font-size: 18px;
+  line-height: 28px;
+  height: 64px;
+  font-weight: 400;
+}

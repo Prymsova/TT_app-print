@@ -1,0 +1,16 @@
+:root {
+  --surface: rgba(255, 255, 255, 1);
+  --highEmphasis: rgba(0, 0, 0, 1);
+  --mediumEmphasis: rgba(0, 0, 0, 0.6);
+  --lowEmphasis: rgba(0, 0, 0, 0.4);
+  --veryLowEmphasis: rgba(0, 0, 0, 0.1);
+  --primaryDarker: rgba(0, 134, 229, 1);
+  --primaryBase: rgba(0, 119, 204, 1);
+  --primaryLighter: rgba(0, 104, 178, 1);
+  --primaryLight1: rgba(0, 119, 204, 0.12);
+  --primaryLight2: rgba(0, 119, 204, 0.24);
+  --warningDarker: rgba(255, 84, 125, 1);
+  --warningBase: rgba(255, 65, 111, 1);
+  --warningLighter: rgba(230, 59, 100, 1);
+  --warningLight1: rgba(255, 65, 111, 0.12);
+}
