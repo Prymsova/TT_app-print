@@ -1,6 +1,7 @@
 @import '../../base.css';
 
 .sprints {
+  margin: 48px 0;
   text-align: center;
   flex: 1 1 auto;
   display: flex;

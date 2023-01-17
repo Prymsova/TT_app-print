@@ -1,0 +1,105 @@
+@import '../../base.css';
+
+.sprint {
+  padding: 32px 48px;
+  /* border: 1px solid #999999; */
+  box-shadow: 0 0 0 1px #999999;
+  @media print {
+    break-after: always;
+  }
+}
+
+.sprint__details {
+
+  @media screen and (min-width: 900px) {
+    display: flex;
+    gap: 24px;
+  }  
+  
+  &--left {
+    @media screen and (min-width: 900px) {
+      flex: 1 1 calc(((100% - 24px) / 5) * 3);
+    }
+  }
+
+  &--right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (min-width: 900px) {
+      flex: 0 1 calc(((100% - 24px) / 5) * 2);
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.sprint__name {
+  font-size: 6vw;
+  font-weight: 600;
+  color: var(--mediumEmphasis);
+  @media screen and (min-width: 900px) {
+    font-size: 60px;
+  }
+}
+
+.sprint__goal {
+  font-size: 8vw;
+  font-weight: 700;
+  color: var(--highEmphasis);
+  @media screen and (min-width: 900px) {
+    font-size: 80px;
+  }
+}
+
+.sprint__dates {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 5.4vw;
+  margin-top: 24px;
+  @media screen and (min-width: 900px) {
+    font-size: 54px;
+  }
+}
+
+.sprint__date {
+  border-radius: 25.69px;
+  padding: 12px 24px;
+  display: block;
+  @media print, screen and (min-width: 900px) {
+    display: inline-block;
+  }
+}
+
+.sprint__date--start {
+  color: rgba(19, 135, 0, 1);
+  background-color: rgba(85, 217, 64, 0.12);
+  margin-bottom: 32px;
+
+  @media screen and (min-width: 900px) {
+    margin-bottom: 0px;
+    margin-right: 40px;
+  }
+  @media print {
+    margin-bottom: 0pt;
+    margin-right: 30pt;
+  }
+
+  &::before {
+    content: url('../../icons/flag.svg');
+    margin-right: 12px;
+    vertical-align: -5%;
+  }
+}
+
+.sprint__date--end {
+  color: var(--warningBase);
+  background-color: var(--warningLight1);
+
+  &::before {
+    content: url('../../icons/sports_score.svg');
+    margin-right: 12px;
+    vertical-align: -5%;
+  }
+}

@@ -1,12 +1,19 @@
 import './style.css';
+import emojis from '../Main/emojis.js';
 
-const Subtask = ({ subtask, task }) => {
+const Subtask = ({ subtask, task, taskIndex }) => {
   //namísto subtask.key chtějí zobrazovat task.key, tedy pro subtasky ze stejného tasku bude stejný TM-1234 a podle něj taky stejný emoji
 
   return (
-    <div className="subtask">
-      <li>{task}, {subtask.fields.summary}</li>
-    </div>
+    <li className="subtask">
+      <div className="subtask__rectangle" />
+      <div className="subtask__content">
+        <div className="subtask__header">
+          <span className="task__key" dataemojis={emojis[taskIndex]}>{task}</span>
+        </div>
+        <h3 className="subtask__summary">{subtask.fields.summary}</h3>
+      </div>
+    </li>
   )
 };
 

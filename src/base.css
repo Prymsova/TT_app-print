@@ -13,4 +13,6 @@
   --warningBase: rgba(255, 65, 111, 1);
   --warningLighter: rgba(230, 59, 100, 1);
   --warningLight1: rgba(255, 65, 111, 0.12);
+  --green: rgba(29, 204, 0, 1);
+  --yellow: rgba(255, 185, 4, 1);
 }

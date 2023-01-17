@@ -4,7 +4,7 @@ import Sprints from '../Sprints';
 const Header = ({ sprintsList, onSubmitSprints }) => {
  
     return (
-        <header className="header">
+        <header className="header noprint">
             <div className="logotype">
                 <svg width="194" height="40" viewBox="0 0 194 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clipPath="url(#clip0_1_214)">

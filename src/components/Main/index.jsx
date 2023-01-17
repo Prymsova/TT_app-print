@@ -1,15 +1,21 @@
 import { useEffect, useState } from 'react';
 import './style.css';
+import Menu from '../Menu/index.jsx';
 import Sprint from '../Sprint/index.jsx';
 import Tasks from '../Tasks/index.jsx';
 import Subtasks from '../Subtasks/index.jsx';
 
-//import sprint124 from './sprint124.js';
 import issue124 from './issue124.js';
 
 const Main = ({ sprintSelect }) => {
 
   const [issues, setIssues] = useState([]);
+  const [imagePath, setImagePath] = useState(null);
+  const [cardsCount, setCardsCount] = useState(0);
+
+  const handleChangeImage = (selectedImage) => {
+    setImagePath(selectedImage);
+  };
 
   useEffect(() => {
     /* fetch(`https://tappytaps2.atlassian.net/rest/agile/1.0/sprint/${sprintSelect.id}/issue`, {
@@ -29,9 +35,10 @@ const Main = ({ sprintSelect }) => {
   }, [sprintSelect]);
 
   return (
-    <main>
-      <Sprint sprint={ sprintSelect }/>
-      <Tasks issues={ issues }/>
+    <main className="main">
+      <Menu onChangeImage={ handleChangeImage } cardsCount={ cardsCount } />
+      <Sprint sprint={ {...sprintSelect, imagePath} } />
+      <Tasks issues={ issues } />
       <Subtasks issues= { issues }/>
     </main>
   );

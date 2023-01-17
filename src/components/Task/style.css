@@ -1,32 +1,40 @@
+@import '../../base.css';
+
 .task {
-    border: 1px solid #999999;
-    padding: 24px;
-    min-height: 280px;
-    font-family: 'Red Hat Display', sans-serif;
+  /* border: 1px solid #999999; */
+  box-shadow: 0 0 0 1px #999999;
+  padding: 24px;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+@media print {
+  .task {
+    break-inside: avoid-page;
+  }
 }
 
 .task__header {
-    margin-bottom: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .task__key {
-    /* color: rgba(0, 0, 0, 0.54); */
-    color: rgba(117, 117, 117);
-    font-size: 24px;
+  /* color: rgba(0, 0, 0, 0.54); */
+  color: rgba(117, 117, 117);
+  font-size: 24px;
 }
 
 .task__key::before {
-    content: attr(dataemojis);
-    margin-right: 10px;
+  content: attr(dataemojis);
+  margin-right: 10px;
 }
 
 .task__count {
-    display: inline-block;
-    padding: 4px 16px;
-    font-size: 34px;
-    background-color: #0000001A;
-    border-radius: 16px;
+  display: inline-block;
+  padding: 4px 16px;
+  font-size: 34px;
+  background-color: #0000001A;
+  border-radius: 16px;
 }

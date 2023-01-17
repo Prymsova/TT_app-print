@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './style.css';
 import emojis from '../Main/emojis.js';
 
@@ -11,7 +12,7 @@ const Task = ({ issue, index }) => {
         <span className="task__key" dataemojis={emojis[index]}>{issue.key}</span>
         <span className="task__count">{issue.fields.subtasks.length}</span>
       </div>
-      <h2 className="task__summary">{issue.fields.summary}</h2>
+      <h3 className="task__summary">{issue.fields.summary}</h3>
     </li>
   )
 };

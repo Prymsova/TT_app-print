@@ -1,9 +1,9 @@
-import './style.css';
+import './style.scss';
 
 const dayName = ["Po", "Út", "St", "Čt", "Pá", "So", "Ne"];
 
 const Sprint = ({ sprint }) => {
-  const { name, goal, startDate, endDate } = sprint;
+  const { name, goal, startDate, endDate, imagePath } = sprint;
 
   const startDateInit = new Date(startDate);
   const startDateFormat = `${dayName[startDateInit.getDay()-1]} ${startDateInit.getDate()}.${startDateInit.getMonth()+1}.`;
@@ -14,8 +14,16 @@ const Sprint = ({ sprint }) => {
   return (
     <div className="sprint">
       <div className="sprint__details">
-        <h2 className="sprint__name">{name}</h2>
-        <h3 className="sprint__goal">{goal}</h3>
+        <div className="sprint__details--left">
+          <h2 className="sprint__name">{name}</h2>
+          <h3 className="sprint__goal">{goal}</h3>
+        </div>
+        <div className="sprint__details--right">
+          {imagePath ?
+            <img src={URL.createObjectURL(imagePath)} alt="sprint obrázek" />
+            : <p className="note">Nahrát obrázek</p> 
+          }
+        </div>
       </div>
       <div className="sprint__dates">
         {startDate ? <span className="sprint__date sprint__date--start">{startDateFormat}</span> : null }

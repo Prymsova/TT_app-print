@@ -1,0 +1,46 @@
+@import '../../base.css';
+
+.menu {
+  margin: 16px 0 32px 0;
+  text-align: center;
+
+  @media screen and (min-width: 750px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__note::before {
+    content: url('../../icons/done.svg');
+    color: var(--primaryBase);
+    margin-right: 8px;
+  }
+
+  &__buttons {
+    margin-top: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    @media screen and (min-width: 750px) {
+      margin-top: 0px;
+    }
+    .btn:last-child {
+      margin-left: 16px;
+    }
+    .btn {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+.btn-image::before {
+  content: url('../../icons/image.svg');
+  margin-right: 12px;
+  vertical-align: -5%;
+}
+
+.btn-print::before {
+  content: url('../../icons/print.svg');
+  margin-right: 12px;
+  vertical-align: -5%;
+}

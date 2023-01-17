@@ -1,4 +1,4 @@
-//import './style.css';
+import './style.css';
 import Subtask from '../Subtask';
 
 const Subtasks = ({ issues }) => {
@@ -9,7 +9,7 @@ const Subtasks = ({ issues }) => {
     <div className="subtasks">
       <ul className="subtasks__list">
         {issues
-        .map((issue) => issue.fields.subtasks.map(subtask => <Subtask key={subtask.key} subtask={subtask} task={issue.key}/>))
+        .map((issue, index) => issue.fields.subtasks.map(subtask => <Subtask key={subtask.key} subtask={subtask} task={issue.key} taskIndex={index}/>))
         }
       </ul>
     </div>
