@@ -13,6 +13,20 @@
 @media print {
   .subtask {
     break-inside: avoid-page;
+    padding: calc(24pt * var(--print));
+    padding-left: calc(16pt * var(--print));
+    gap: calc(16pt * var(--print));
+    box-shadow: none;
+    border-bottom: calc(1pt * var(--print)) solid #999999;
+  }
+  .subtask:nth-child(3n+1),
+  .subtask:nth-child(3n+2) {
+    border-right: calc(1pt * var(--print)) solid #999999;
+  }
+  .subtask:nth-child(12n+10),
+  .subtask:nth-child(12n+11),
+  .subtask:nth-child(12n+12) {
+    border-bottom: none;
   }
 }
 
@@ -22,6 +36,10 @@
   width: 12px;
   flex: 0 0 auto;
   border-radius: 12px;
+  @media print {
+    width: calc(12pt * var(--print));
+    border-radius: calc(12pt * var(--print));
+  }
 }
 
 .subtask__rectangle--blue {background-color: var(--primaryBase);}
@@ -31,4 +49,14 @@
 
 .subtask__header {
   margin-bottom: 12px;
+  @media print {
+    margin-bottom: calc(12pt * var(--print));
+  }
+}
+
+.subtask__summary {
+  font-size: 38px;
+  @media print {
+    font-size: calc(38pt * var(--print));
+  }
 }

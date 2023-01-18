@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Main from './components/Main';
-import response from './sprintsList';
+//import response from './sprintsList';
 
 function App() {
 
@@ -20,7 +20,7 @@ function App() {
   }, [sprintSelect]);
 
   useEffect(() => {
-    /* fetch('https://tappytaps2.atlassian.net/rest/agile/1.0/board/1/sprint/?state=active%2Cfuture', {
+    fetch('https://tappytaps2.atlassian.net/rest/agile/1.0/board/1/sprint/?state=active%2Cfuture', {
       method: 'GET',
       headers: {
         cookie: 'atlassian.xsrf.token=BN8V-28CD-O255-NJ3H_39190a654ef9eef5395391e5a85c1dcb452949d0_lin',
@@ -29,15 +29,15 @@ function App() {
     })
       .then(response => response.json())
       .then(response => setSprintsList(response.values))
-      .catch(err => console.error(err)); */
-    setSprintsList(response.values)
+      .catch(err => console.error(err));
+    /* setSprintsList(response.values) */
   }, []);
       
   return (
     <div className="App">
       <Header sprintsList={sprintsList} onSubmitSprints={ handleSubmitSprints }/>
       {/* podmínka je-li vybrán sprint (nenulový state), tak zobraz main sekci s těmi tasks*/}
-      { sprintSelect ? <Main sprintSelect={ sprintSelect }/> : null }
+      { sprintSelect ? <Main sprintSelect={ sprintSelect } /> : null }
       <Footer />
     </div>
   );

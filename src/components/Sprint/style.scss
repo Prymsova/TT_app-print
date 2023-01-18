@@ -6,6 +6,8 @@
   box-shadow: 0 0 0 1px #999999;
   @media print {
     break-after: always;
+    padding: calc(32pt * var(--print)) calc(48pt * var(--print));
+    box-shadow: none;
   }
 }
 
@@ -13,12 +15,19 @@
 
   @media screen and (min-width: 900px) {
     display: flex;
-    gap: 24px;
-  }  
+    gap: 16px;
+  }
+  @media print {
+    display: flex;
+    gap: calc(16pt * var(--print));
+  }
   
   &--left {
     @media screen and (min-width: 900px) {
       flex: 1 1 calc(((100% - 24px) / 5) * 3);
+    }
+    @media print {
+      flex-basis: calc(((100% - (24pt * var(--print))) / 5) * 3);
     }
   }
 
@@ -28,6 +37,9 @@
     justify-content: center;
     @media screen and (min-width: 900px) {
       flex: 0 1 calc(((100% - 24px) / 5) * 2);
+    }
+    @media print {
+      flex-basis: calc(((100% - (24pt * var(--print))) / 5) * 2);
     }
 
     img {
@@ -41,7 +53,10 @@
   font-weight: 600;
   color: var(--mediumEmphasis);
   @media screen and (min-width: 900px) {
-    font-size: 60px;
+    font-size: 48px;
+  }
+  @media print {
+    font-size: calc(85pt * var(--print));
   }
 }
 
@@ -50,7 +65,10 @@
   font-weight: 700;
   color: var(--highEmphasis);
   @media screen and (min-width: 900px) {
-    font-size: 80px;
+    font-size: 60px;
+  }
+  @media print {
+    font-size: calc(113pt * var(--print));
   }
 }
 
@@ -61,13 +79,21 @@
   @media screen and (min-width: 900px) {
     font-size: 54px;
   }
+  @media print {
+    font-size: calc(76pt * var(--print));
+  }
 }
 
 .sprint__date {
   border-radius: 25.69px;
   padding: 12px 24px;
   display: block;
-  @media print, screen and (min-width: 900px) {
+  @media screen and (min-width: 900px) {
+    display: inline-block;
+  }
+  @media print {
+    border-radius: calc(25.69pt * var(--print));
+    padding: calc(12pt * var(--print)) calc(24pt * var(--print));
     display: inline-block;
   }
 }
@@ -83,13 +109,16 @@
   }
   @media print {
     margin-bottom: 0pt;
-    margin-right: 30pt;
+    margin-right: calc(40pt * var(--print));
   }
 
   &::before {
     content: url('../../icons/flag.svg');
-    margin-right: 12px;
+    margin-right: 24px;
     vertical-align: -5%;
+    @media print {
+      margin-right: calc(12pt * var(--print));
+    }
   }
 }
 
@@ -99,7 +128,10 @@
 
   &::before {
     content: url('../../icons/sports_score.svg');
-    margin-right: 12px;
+    margin-right: 24px;
     vertical-align: -5%;
+    @media print {
+      margin-right: calc(12pt * var(--print));
+    }
   }
 }

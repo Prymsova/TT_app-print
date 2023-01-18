@@ -18,6 +18,7 @@
 @media print {
   .App {
     width: 297mm;
+    font-size: calc(18pt * var(--print));
   }
 }
 
@@ -44,4 +45,13 @@ h5 {font-size: 18px;}
 h6 {
   font-family: 'Inter', sans-serif;
   font-size: 24px;
+}
+
+@media print {
+  h1 {font-size: calc(60pt * var(--print));}
+  h2 {font-size: calc(48pt * var(--print));}
+  h3 {font-size: calc(34pt * var(--print));}
+  h4 {font-size: calc(24pt * var(--print));}
+  h5 {font-size: calc(18pt * var(--print));}
+  h6 {font-size: calc(24pt * var(--print));}
 }

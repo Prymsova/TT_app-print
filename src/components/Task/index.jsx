@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import './style.css';
+import './style.scss';
 import emojis from '../Main/emojis.js';
 
 const Task = ({ issue, index }) => {

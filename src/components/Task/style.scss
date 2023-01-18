@@ -1,0 +1,74 @@
+@import '../../base.css';
+
+.task {
+  /* border: 1px solid #999999; */
+  box-shadow: 0 0 0 1px #999999;
+  padding: 24px;
+  font-family: 'Red Hat Display', sans-serif;
+  @media screen and (min-width: 1116px) {
+    min-height: 320px;
+  }
+}
+
+@media print {
+  .task {
+    break-inside: avoid-page;
+    box-shadow: none;
+    padding: calc(24pt * var(--print));
+  }
+  .task:nth-child(odd) {
+    border-right: calc(1pt * var(--print)) solid #999999;
+  }
+  .task:nth-child(6n+3),
+  .task:nth-child(6n+4) {
+    border-top: calc(1pt * var(--print)) solid #999999;
+    border-bottom: calc(1pt * var(--print)) solid #999999;
+  }
+}
+
+.task__header {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media print {
+    margin-bottom: calc(12pt * var(--print));
+  }
+}
+
+.task__key {
+  /* color: rgba(0, 0, 0, 0.54); */
+  color: rgba(117, 117, 117);
+  font-size: 24px;
+  @media print {
+    font-size: calc(24pt * var(--print));
+  }
+}
+
+.task__key::before {
+  content: attr(dataemojis);
+  margin-right: 10px;
+  @media print {
+    margin-right: calc(10pt * var(--print));
+  }
+}
+
+.task__count {
+  display: inline-block;
+  padding: 4px 16px;
+  font-size: 34px;
+  background-color: var(--veryLowEmphasis);
+  border-radius: 16px;
+  @media print {
+    padding: calc(4pt * var(--print)) calc(16pt * var(--print));
+    font-size: calc(34pt * var(--print));
+    border-radius: calc(16pt * var(--print));
+  }
+}
+
+.task__summary {
+  font-size: 48px;
+  @media print {
+    font-size: calc(48pt * var(--print));
+  }
+}

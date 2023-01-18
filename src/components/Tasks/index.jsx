@@ -1,4 +1,4 @@
-import './style.css';
+import './style.scss';
 import Task from '../Task';
 
 const Tasks = ({ issues }) => {

@@ -5,7 +5,7 @@ import Sprint from '../Sprint/index.jsx';
 import Tasks from '../Tasks/index.jsx';
 import Subtasks from '../Subtasks/index.jsx';
 
-import issue124 from './issue124.js';
+//import issue124 from './issue124.js';
 
 const Main = ({ sprintSelect }) => {
 
@@ -18,7 +18,7 @@ const Main = ({ sprintSelect }) => {
   };
 
   useEffect(() => {
-    /* fetch(`https://tappytaps2.atlassian.net/rest/agile/1.0/sprint/${sprintSelect.id}/issue`, {
+    fetch(`https://tappytaps2.atlassian.net/rest/agile/1.0/sprint/${sprintSelect.id}/issue`, {
       method: 'GET',
       headers: {
         cookie: 'atlassian.xsrf.token=BN8V-28CD-O255-NJ3H_39190a654ef9eef5395391e5a85c1dcb452949d0_lin',
@@ -26,12 +26,21 @@ const Main = ({ sprintSelect }) => {
       }
     })
       .then(response => response.json())
-      .then(response => setIssues(response.issues.filter(issue => issue.fields.subtasks.length > 0)))
-      .catch(err => console.error(err)); */
+      .then(response => {
+        const issuesFilter = response.issues.filter(issue => issue.fields.subtasks.length > 0);
+        setIssues(issuesFilter);
+        let newCount = issuesFilter.length;
+        issuesFilter.map(issue => newCount += issue.fields.subtasks.length);
+        setCardsCount(newCount);
+      })
+      .catch(err => console.error(err));
 
-    const issuesFilter = issue124.issues.filter(issue => issue.fields.subtasks.length > 0);
-    
+    /* const issuesFilter = issue124.issues.filter(issue => issue.fields.subtasks.length > 0);
     setIssues(issuesFilter);
+    let newCount = issuesFilter.length;
+    issuesFilter.map(issue => newCount += issue.fields.subtasks.length);
+    setCardsCount(newCount); */
+
   }, [sprintSelect]);
 
   return (

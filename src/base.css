@@ -15,4 +15,6 @@
   --warningLight1: rgba(255, 65, 111, 0.12);
   --green: rgba(29, 204, 0, 1);
   --yellow: rgba(255, 185, 4, 1);
+  /*--print: 0.75; /*převod 1px = 0.75pt*/
+  --print: 0.5332; /*převod podle layoutu ve figmě*/
 }
