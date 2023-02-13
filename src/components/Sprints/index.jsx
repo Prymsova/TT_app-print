@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import './style.css';
+import './style.scss';
 import Btn from '../Btn';
 
 const Sprints = ({ sprintsList, onSubmitSprints }) => {

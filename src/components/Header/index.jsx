@@ -1,4 +1,4 @@
-import './style.css';
+import './style.scss';
 import Sprints from '../Sprints';
 
 const Header = ({ sprintsList, onSubmitSprints }) => {

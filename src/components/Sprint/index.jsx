@@ -26,8 +26,12 @@ const Sprint = ({ sprint }) => {
         </div>
       </div>
       <div className="sprint__dates">
-        {startDate ? <span className="sprint__date sprint__date--start">{startDateFormat}</span> : null }
-        {endDate ? <span className="sprint__date sprint__date--end">{endDateFormat}</span> : null }
+        {startDate &&
+          <span className="sprint__date sprint__date--start">{startDateFormat}</span>
+        }
+        {endDate &&
+          <span className="sprint__date sprint__date--end">{endDateFormat}</span>
+        }
       </div>
     </div>
   )

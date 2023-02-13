@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
-import './App.css';
+import './App.scss';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Main from './components/Main';
-//import response from './sprintsList';
 
 function App() {
 
@@ -12,32 +11,33 @@ function App() {
 
   const handleSubmitSprints = (selectValue) => {
     setSprintSelect(sprintsList.filter(sprint => sprint.id === Number(selectValue))[0]);
-    //setSprintSelect(selectValue);
   };
 
   useEffect(() => {
-    console.log(sprintSelect);
-  }, [sprintSelect]);
+    const fetchData = async () => {
+      
+      const response = await fetch(`${process.env.REACT_APP_JIRA_API}board/1/sprint/?state=active%2Cfuture`, {
+        method: 'GET',
+        headers: {
+          cookie: `${process.env.REACT_APP_REQUEST_TOKEN}`,
+          Authorization: `${process.env.REACT_APP_REQUEST_AUTH}`
+        } 
+      });
+      const data = await response.json();
+      setSprintsList(data.values);
+    };
 
-  useEffect(() => {
-    fetch('https://tappytaps2.atlassian.net/rest/agile/1.0/board/1/sprint/?state=active%2Cfuture', {
-      method: 'GET',
-      headers: {
-        cookie: 'atlassian.xsrf.token=BN8V-28CD-O255-NJ3H_39190a654ef9eef5395391e5a85c1dcb452949d0_lin',
-        Authorization: 'Basic c2Fyc29uakBnbWFpbC5jb206YnhzNGxFbkJaUU1tTUd0RW05YnE1NUND'
-      } 
-    })
-      .then(response => response.json())
-      .then(response => setSprintsList(response.values))
-      .catch(err => console.error(err));
-    /* setSprintsList(response.values) */
+    fetchData()
+    .catch(err => console.error(err));
+
   }, []);
       
   return (
     <div className="App">
       <Header sprintsList={sprintsList} onSubmitSprints={ handleSubmitSprints }/>
-      {/* podmínka je-li vybrán sprint (nenulový state), tak zobraz main sekci s těmi tasks*/}
-      { sprintSelect ? <Main sprintSelect={ sprintSelect } /> : null }
+      { sprintSelect &&
+        <Main sprintSelect={ sprintSelect } />
+      }
       <Footer />
     </div>
   );

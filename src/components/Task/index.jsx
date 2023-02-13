@@ -2,8 +2,6 @@ import './style.scss';
 import emojis from '../Main/emojis.js';
 
 const Task = ({ issue, index }) => {
-  //console.log(issue.fields.subtasks);
-  //verze bez psedo-elementu ::before >> <p>{emojis[index]} {issue.key} {issue.fields.subtasks.length}</p>
 
   return (
     <li className="task">

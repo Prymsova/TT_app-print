@@ -2,9 +2,7 @@ import './style.scss';
 import Subtask from '../Subtask';
 
 const Subtasks = ({ issues }) => {
-  //console.log(issues);
-  //console.log(issues.length)
-    
+  
   return (
     <div className="subtasks">
       <ul className="subtasks__list">

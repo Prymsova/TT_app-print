@@ -2,7 +2,6 @@ import './style.scss';
 import Task from '../Task';
 
 const Tasks = ({ issues }) => {
-  //v props jsou pouze tasky s alespoň jedním subtaskem
 
   return (
     <div className="tasks">
