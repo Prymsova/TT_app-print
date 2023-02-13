@@ -1,4 +1,4 @@
-@import '../../base.scss';
+@import '../../assets/base.scss';
 
 .menu {
   margin: 16px 0 32px 0;
@@ -11,7 +11,7 @@
   }
 
   &__note::before {
-    content: url('../../icons/done.svg');
+    content: url('../../assets/icons/done.svg');
     color: var(--primaryBase);
     margin-right: 8px;
   }
@@ -34,13 +34,13 @@
 }
 
 .btn-image::before {
-  content: url('../../icons/image.svg');
+  content: url('../../assets/icons/image.svg');
   margin-right: 12px;
   vertical-align: -5%;
 }
 
 .btn-print::before {
-  content: url('../../icons/print.svg');
+  content: url('../../assets/icons/print.svg');
   margin-right: 12px;
   vertical-align: -5%;
 }

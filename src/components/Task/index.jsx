@@ -1,5 +1,5 @@
 import './style.scss';
-import emojis from '../Main/emojis.js';
+import emojis from '../../assets/emojis.js';
 
 const Task = ({ issue, index }) => {
 

@@ -1,7 +1,6 @@
-@import '../../base.scss';
+@import '../../assets/base.scss';
 
 .task {
-  /* border: 1px solid #999999; */
   box-shadow: 0 0 0 1px #999999;
   padding: 24px;
   font-family: 'Red Hat Display', sans-serif;
@@ -38,7 +37,6 @@
 }
 
 .task__key {
-  /* color: rgba(0, 0, 0, 0.54); */
   color: rgba(117, 117, 117);
   font-size: 24px;
   @media print {

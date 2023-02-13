@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import './App.scss';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Main from './components/Main';
+import Header from '../Header';
+import Footer from '../Footer';
+import Main from '../Main';
 
 function App() {
 
@@ -14,22 +15,16 @@ function App() {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      
-      const response = await fetch(`${process.env.REACT_APP_JIRA_API}board/1/sprint/?state=active%2Cfuture`, {
-        method: 'GET',
-        headers: {
-          cookie: `${process.env.REACT_APP_REQUEST_TOKEN}`,
-          Authorization: `${process.env.REACT_APP_REQUEST_AUTH}`
-        } 
-      });
-      const data = await response.json();
-      setSprintsList(data.values);
+    const getData = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api');
+        setSprintsList(response.data.values);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
-    fetchData()
-    .catch(err => console.error(err));
-
+    getData()
   }, []);
       
   return (
