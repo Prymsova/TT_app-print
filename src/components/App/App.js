@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api');
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api`);
         setSprintsList(response.data.values);
       } catch (error) {
         console.error(error);

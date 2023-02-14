@@ -18,3 +18,4 @@ The build is minified and the filenames include the hashes.\
 This app uses **sass**.
 
 It's necessary use this app with backend because of the problem with CORS policy, when you want to start app from the browser.
+API url is defined in .env files.
