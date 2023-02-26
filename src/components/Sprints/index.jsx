@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import './style.scss';
-import Btn from '../Btn';
 
 const Sprints = ({ sprintsList, onSubmitSprints }) => {
 
@@ -20,7 +19,7 @@ const Sprints = ({ sprintsList, onSubmitSprints }) => {
                 <select className="sprints__select" id="sprints__select" name="sprints__select" ref={ sprintSelectRef }>
                     {sprintsList.map(sprintItem => <option key={sprintItem.id} value={sprintItem.id}>{sprintItem.name}</option>)}
                 </select>
-                <Btn classValue="btn--primary" type="submit" value="Generovat"/>
+                <button className="btn btn--primary" type="submit">Generovat</button>
             </form>
         </div>
     );

@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.scss';
-import Header from '../Header';
-import Footer from '../Footer';
-import Main from '../Main';
+import Header from './page/Header';
+import Footer from './page/Footer';
+import Main from './page/Main';
+import isDev from './assets/isDev.js';
 
 function App() {
 

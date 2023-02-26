@@ -1,5 +1,5 @@
 import './style.scss';
-import Task from '../Task';
+import Task from '../../../components/Task';
 
 const Tasks = ({ issues }) => {
 

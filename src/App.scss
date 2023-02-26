@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Red+Hat+Display:wght@700&display=swap');
-@import '../../assets/base.scss';
+@import './assets/base.scss';
 
 .App {
   max-width: 1116px;
@@ -13,10 +13,8 @@
   font-weight: 700;
   background-color: var(--surface);
   color: var(--highEmphasis);
-}
 
-@media print {
-  .App {
+  @media print {
     width: 297mm;
     font-size: calc(18pt * var(--print));
   }
@@ -54,4 +52,46 @@ h6 {
   h4 {font-size: calc(24pt * var(--print));}
   h5 {font-size: calc(18pt * var(--print));}
   h6 {font-size: calc(24pt * var(--print));}
+}
+
+.btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 16px;
+  height: 64px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.8px;
+  border-radius: 16px;
+  border: none;
+}
+
+.btn--primary {
+  margin: 12px;
+  padding: 24px 32px;
+  color: #ffffff;
+  background-color: var(--primaryBase);
+}
+
+.btn--primary:hover {
+  background-color: var(--primaryLighter);
+}
+
+.btn--primary:active {
+  background-color: var(--primaryDarker);
+}
+
+.btn--outlined {
+  background-color: var(--surface);
+  padding: 20px 24px 20px 16px;
+  color: var(--primaryBase);
+  border: 2px solid var(--primaryBase);
+}
+
+.btn--outlined:hover {
+  background-color: var(--primaryLight1);
+}
+
+.btn--outlined:active {
+  background-color: var(--primaryLight2);
 }

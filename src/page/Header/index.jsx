@@ -1,5 +1,5 @@
 import './style.scss';
-import Sprints from '../Sprints';
+import Sprints from '../../components/Sprints';
 
 const Header = ({ sprintsList, onSubmitSprints }) => {
  

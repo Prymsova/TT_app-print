@@ -6,16 +6,13 @@ In the project directory please start with `npm install` for installing the depe
 
 You can continue with `npm start`:
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Open [http://localhost:8080](http://localhost:3000) to view it in your browser.
 
 `npm run build`
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-The build is minified and the filenames include the hashes.\
 
 This app uses **sass**.
+There is no style module, all styles are global.
 
 It's necessary use this app with backend because of the problem with CORS policy, when you want to start app from the browser.
 API url is defined in .env files.

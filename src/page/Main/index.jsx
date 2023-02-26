@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './style.scss';
-import Menu from '../Menu/index.jsx';
-import Sprint from '../Sprint/index.jsx';
-import Tasks from '../Tasks/index.jsx';
-import Subtasks from '../Subtasks/index.jsx';
+import Menu from '../../components/Menu';
+import Sprint from '../../components/Sprint';
+import Tasks from './Tasks';
+import Subtasks from './Subtasks';
 
 const Main = ({ sprintSelect }) => {
 

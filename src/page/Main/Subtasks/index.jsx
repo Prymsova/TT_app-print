@@ -1,5 +1,5 @@
 import './style.scss';
-import Subtask from '../Subtask';
+import Subtask from '../../../components/Subtask';
 
 const Subtasks = ({ issues }) => {
   
