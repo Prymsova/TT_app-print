@@ -1,8 +1,12 @@
 const express = require('express');
+const path = require('path');
 const axios = require('axios').default;
 require('dotenv').config();
 
 const app = express();
+const PORT = process.env.PORT || 5000;
+
+app.use(express.static(path.join(__dirname, "../frontend", "build")));
 
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -12,10 +16,14 @@ app.use(function(req, res, next) {
   next();
 });
 
-const getHeaders = {
+const headers = {
   cookie: `${process.env.REQUEST_TOKEN}`,
   Authorization: `${process.env.REQUEST_AUTH}`
 }
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"))
+})
 
 app.get("/api", (req, res) => {
   const getSprints = async () => {
@@ -24,7 +32,7 @@ app.get("/api", (req, res) => {
         method: 'GET',
         url: `${process.env.JIRA_URL}board/1/sprint/`,
         params: {state: 'active,future'},
-        headers: getHeaders
+        headers: headers
       });
       res.send(response.data);
     } catch (error) {
@@ -41,7 +49,7 @@ app.get("/api/sprint/:id", (req, res) => {
       const response = await axios.request({
         method: 'GET',
         url: `${process.env.JIRA_URL}sprint/${id}/issue`,
-        headers: getHeaders
+        headers: headers
       });
       res.send(response.data);
     } catch (error) {
@@ -51,6 +59,6 @@ app.get("/api/sprint/:id", (req, res) => {
   getSprint(sprintId);
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(`server started on port ${process.env.PORT}`)
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`)
 });

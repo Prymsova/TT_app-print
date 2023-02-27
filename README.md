@@ -1,18 +1,8 @@
-# App for printing sprints, tasks and subtasks from JIRA
+# APP FOR PRINT CARDS FROM JIRA for TappyTaps
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-In the project directory please start with `npm install` for installing the dependencies of this app.
-
-You can continue with `npm start`:
-Runs the app in the development mode.\
-Open [http://localhost:8080](http://localhost:3000) to view it in your browser.
-
-`npm run build`
-Builds the app for production to the `build` folder.\
-
-This app uses **sass**.
-There is no style module, all styles are global.
-
-It's necessary use this app with backend because of the problem with CORS policy, when you want to start app from the browser.
-API url is defined in .env files.
+- there is backend (nodejs) and frontend (react) part of app
+- first of all, please **fill environment variables in .env file** (you can use .env-template file) in "backend" folder
+- `npm run build` will **install dependencies in frontend** part (react, sass, axios) and build the build folder
+- `cd backend` and `npm install` will **install dependencies in backend** part (axios, dotenv, express)
+- if you want start index.js of backend by node, type `cd ..` and `npm start`
+- 

@@ -19,7 +19,7 @@ const Main = ({ sprintSelect }) => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/sprint/${sprintSelect.id}`);
+        const response = await axios.get(`/api/sprint/${sprintSelect.id}`);
         const issuesFilter = response.data.issues.filter(issue => issue.fields.subtasks.length > 0);
         setIssues(issuesFilter);
         let newCount = issuesFilter.length;

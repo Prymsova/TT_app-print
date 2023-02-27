@@ -4,7 +4,7 @@ import './App.scss';
 import Header from './page/Header';
 import Footer from './page/Footer';
 import Main from './page/Main';
-import isDev from './assets/isDev.js';
+//import isDev from './assets/isDev.js';
 
 function App() {
 
@@ -18,7 +18,8 @@ function App() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api`);
+        //const response = await axios.get(`${process.env.REACT_APP_API_URL}/api`);
+        const response = await axios.get('/api');
         setSprintsList(response.data.values);
       } catch (error) {
         console.error(error);

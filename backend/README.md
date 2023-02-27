@@ -1,6 +1,5 @@
 # BE for aplication PRINT CARDS FROM JIRA for TappyTaps
 - created in node.js
-- npm install
+- `npm install` for installing the dependencies of this app
 - dependencies express, dotenv, axios
-- because of CORS policy there is definition of header of response - in .env you can change allowed origin and methods
-- 
+- this backend was created because of CORS policy error in case frontend tries get data from jira directly
