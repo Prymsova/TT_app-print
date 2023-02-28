@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd backend && node index.js",
-    "build": "cd frontend && npm install && npm run build"
+    "node-start": "cd backend && npm install && node index.js && cd ..",
+    "react-build": "cd frontend && npm install && npm run build && cd ..",
+    "preview": "npm run react-build && npm run node-start"
   },
   "repository": {
     "type": "git",
